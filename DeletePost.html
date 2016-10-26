@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Delete Posts</title>
+  </head>
+
+  <body>
+    <h1>Delete all the posts!</h1>
+    <br>
+    <h2>Pick which posts to delete</h2>
+
+    <form action = "php/DeletePost.php" method="post">
+    <table><tr><th>Post ID</th><th>Author</th><th>Post</th></tr>
+      <?php
+      $mysqli = new mysqli("mysql.eecs.ku.edu", "cporras", "Password123!", "cporras");
+
+      $query = "SELECT * FROM Posts WHERE 1";
+      $result = $mysqli->query($query);
+
+      if($result->num_rows > 0 ){
+        while($row = $result->fetch_assoc()){
+          echo "<tr><td>".$row["post_id"]."</td><td>".$row["author_id"]."</td><td>".$row["content"]."</td><td><button name = \"Delete\" value = ".$row["post_id"].">Delete</button></td></tr>";
+        }
+      }
+      else{
+        echo "No users found.";
+      } 
+
+      $mysqli->close();   
+      ?>
+      </table>
+    </form>
+
+    <button onclick="window.location.href='AdminHome.html'">Back to Admin Page</button>
+
+  </body>
+</html>
