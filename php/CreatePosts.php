@@ -1,3 +1,5 @@
+<link type="text/css" href="../css/Lab05StyleSheet.css" rel ="stylesheet"></link>
+
 <?php
 	$username = $_POST["Username"];
 	$content = $_POST["Content"];

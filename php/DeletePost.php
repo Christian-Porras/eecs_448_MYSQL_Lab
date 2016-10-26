@@ -1,3 +1,5 @@
+<link type="text/css" href="../css/Lab05StyleSheet.css" rel ="stylesheet"></link>
+
 <?php
   
   $delete = $_POST["Delete"];

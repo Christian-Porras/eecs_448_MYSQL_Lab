@@ -1,3 +1,5 @@
+<link type="text/css" href="../css/Lab05StyleSheet.css" rel ="stylesheet"></link>
+
 <?php
   	$mysqli = new mysqli("mysql.eecs.ku.edu", "cporras", "Password123!", "cporras");
 

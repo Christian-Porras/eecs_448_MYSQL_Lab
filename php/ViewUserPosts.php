@@ -1,3 +1,4 @@
+<link type="text/css" href="../css/Lab05StyleSheet.css" rel ="stylesheet"></link>
 <?php
   $username = $_POST["Users"];
 
@@ -24,6 +25,7 @@
     echo "User ".$username." has no posts.";
   }
 
+  echo "<br>";
   echo "<button onclick = \"window.location.href='../AdminHome.html'\">Return to Admin Page</button>";
   echo "<button onclick = \"window.location.href='../ViewUserPosts.html'\">Return to View User Posts Page</button>";
 
