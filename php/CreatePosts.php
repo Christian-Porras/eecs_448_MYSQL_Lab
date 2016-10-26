@@ -29,12 +29,12 @@
 		}
 	}
 	elseif($username == ""){
-		echo "Username cannot be blank. Redirecting back to post in 10 seconds.";
-		header("Refresh:10; ../CreatePosts.html");
+		echo "Username cannot be blank. Redirecting back to post in 5 seconds.";
+		header("Refresh:5; ../CreatePosts.html");
 	}
 	elseif($content == ""){
-		echo "Post cannot be blank. Redirecting back to post in 10 seconds.";
-		header("Refresh:10; ../CreatePosts.html");
+		echo "Post cannot be blank. Redirecting back to post in 5 seconds.";
+		header("Refresh:5; ../CreatePosts.html");
 	} 
 
 	$mysqli->close();

@@ -11,14 +11,18 @@
 
 	if($result->num_rows > 0 ){
 		$currentRow = 1;
+		echo "<table><tr><th>User Number</th><th>Username</th></tr>";
 		while($row = $result->fetch_assoc()){
-			echo "user_id".$currentRow.": ".$row["user_id"]."<br>";
+			echo "<tr><td>".$currentRow."</td><td>".$row["user_id"]."</td></tr>";
 			$currentRow = $currentRow + 1;
 		}
+		echo "</table>";
 	}
 	else{
 		echo "No users found.";
 	}
+
+	 echo "<button onclick = \"window.location.href='../AdminHome.html'\">Return to Admin Page</button>";
 
 	$mysqli->close();
 ?>

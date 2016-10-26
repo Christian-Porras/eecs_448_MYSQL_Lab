@@ -17,7 +17,6 @@
   		$query = "INSERT INTO Users VALUES ('".$username."')";
   		if($mysqli->query($query) == TRUE ){
   			echo "Username ". $username. " saved.";
-  			header("Refresh:5; ../CreatePosts.html");
   		}
   		else{
   			echo "Error: ". $mysqli->error;
@@ -32,6 +31,10 @@
   	echo "Username cannot be blank.";
   	exit();
   }
+
+echo "<br>";
+echo "<button onclick = \"window.location.href='../Lab5Index.html'\">Return to Home Page</button>";
+echo "<button onclick = \"window.location.href='../CreatePosts.html'\">Create Posts</button>";
 
 $mysqli->close();  
 
