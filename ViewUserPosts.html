@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>View User Posts</title>
+  </head>
+
+  <body>
+    <h1>See what a user has posted!</h1>
+
+    <form action = "php/ViewUserPosts.php" method="post">
+      Select a User: <select name = "Users">
+      <?php
+      $mysqli = new mysqli("mysql.eecs.ku.edu", "cporras", "Password123!", "cporras");
+
+      $query = "SELECT * FROM Users WHERE 1";
+      $result = $mysqli->query($query);
+
+      if($result->num_rows > 0 ){
+        while($row = $result->fetch_assoc()){
+          echo "<option value = ".$row["user_id"].">".$row["user_id"]."</option>";
+        }
+      }
+      else{
+        echo "No users found.";
+      } 
+
+      $mysqli->close();   
+      ?>
+      </select>
+      <br>
+      <input type = "Submit"></input>
+      </form>
+
+      <br>
+      Need to see the users?<button onclick="window.location.href='php/ViewUsers.php'">Click Here!</button>
+
+  </body>
+
+</html>
